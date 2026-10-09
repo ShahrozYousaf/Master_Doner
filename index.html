@@ -1,0 +1,2834 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVQM2FCHWV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('config', 'G-NVQM2FCHWV');
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050505">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <link rel="canonical" href="https://TU-DOMINIO.com/">
+    <link rel="icon" href="./pic/logo.png" type="image/png">
+    <style>
+      :root {
+        --black: #050505;
+        --black-soft: #11100f;
+        --white: #fff;
+        --paper: #f1eee6;
+        --red: #e0001b;
+        --orange: #ffa000;
+        --line-dark: rgba(255, 255, 255, 0.18);
+        --display: Impact, Haettenschweiler, "Arial Narrow Bold", "Arial Black", sans-serif;
+        --body: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--black);
+      }
+
+      body {
+        margin: 0;
+        min-width: 280px;
+        overflow-x: hidden;
+        background: var(--black);
+        color: var(--white);
+        font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body::before {
+        position: fixed;
+        z-index: 20;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        opacity: 0.045;
+        background-image: repeating-radial-gradient(circle at 17% 32%, #fff 0 0.45px, transparent 0.6px 3px);
+        background-size: 7px 7px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2.2vw, 2.5rem);
+      }
+
+      .site-nav__links {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2vw, 2rem);
+      }
+
+      .site-nav a {
+        color: var(--white);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .site-nav__links a {
+        transition: color 180ms ease;
+      }
+
+      .site-nav__links a:hover,
+      .site-nav__links a:focus-visible {
+        color: var(--orange);
+      }
+
+      .language-switcher {
+        display: inline-flex;
+        padding: 0.2rem;
+        border: 1px solid var(--line-dark);
+        border-radius: 999px;
+      }
+
+      .language-switcher button {
+        min-width: 2.2rem;
+        padding: 0.35rem 0.45rem;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--white);
+        cursor: pointer;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .language-switcher button[aria-pressed="true"] {
+        background: var(--white);
+        color: var(--black);
+      }
+
+      .book-table {
+        min-height: 2.65rem;
+        padding: 0.8rem 1rem;
+        background: var(--orange);
+        color: var(--black) !important;
+        transition: background 180ms ease, color 180ms ease;
+      }
+
+  .book-table:hover,
+  .book-table:focus-visible {
+    background: var(--white);
+  }
+
+  .menu-toggle {
+    display: none;
+    padding: 0.65rem;
+    border: 1px solid var(--line-dark);
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 1.45rem;
+    height: 2px;
+    margin: 0.28rem 0;
+    background: var(--white);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.8rem 1rem;
+  transform: translateY(-180%);
+  background: var(--white);
+  color: var(--black);
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100svh;
+  grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.12fr);
+  gap: clamp(4rem, 6vw, 8rem);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(10rem, 15vh, 12rem) max(2rem, calc((100vw - 1480px) / 2)) clamp(5rem, 9vh, 8rem);
+  background:
+    linear-gradient(105deg, transparent 0 55%, rgba(255, 255, 255, 0.035) 55% 55.1%, transparent 55.1%),
+    radial-gradient(circle at 78% 48%, rgba(224, 0, 27, 0.12), transparent 34%),
+    var(--black);
+}
+
+.hero::after {
+  position: absolute;
+  z-index: -1;
+  right: 47%;
+  bottom: -38rem;
+  width: 55rem;
+  height: 55rem;
+  content: "";
+  border: 1px solid rgba(255, 160, 0, 0.24);
+  border-radius: 50%;
+}
+
+.hero__ornament {
+  position: absolute;
+  z-index: -1;
+  width: 11rem;
+  height: 2px;
+  background: var(--red);
+}
+
+.hero__ornament--one {
+  top: 29%;
+  left: -4rem;
+  transform: rotate(-12deg);
+}
+
+.hero__ornament--two {
+  right: -3rem;
+  bottom: 18%;
+  width: 17rem;
+  transform: rotate(-42deg);
+  background: var(--orange);
+}
+
+.hero__copy,
+.hero__brand {
+  min-width: 0;
+}
+
+.hero__brand {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow,
+.section-number {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+}
+
+.eyebrow span {
+  width: 2.4rem;
+  height: 0.5rem;
+  background: var(--red);
+}
+
+.hero h1 {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  font-family: var(--display);
+  max-width: 100%;
+  font-size: clamp(4.4rem, 6.4vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.hero h1 span:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: clamp(0rem, 1.2vw, 1.25rem);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 0.74em;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.hero h1 span:nth-child(2)::after {
+  position: absolute;
+  z-index: -1;
+  right: -0.05em;
+  bottom: -0.01em;
+  left: -0.05em;
+  height: 0.11em;
+  content: "";
+  background: var(--orange);
+}
+
+.hero__date {
+  display: flex;
+  margin: clamp(1.8rem, 3vw, 2.8rem) 0 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.15rem;
+  text-transform: uppercase;
+}
+
+.hero__date span {
+  padding: 0.55rem 0.7rem;
+  background: var(--red);
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+}
+
+.hero__date strong {
+  color: var(--orange);
+  font-size: clamp(1.5rem, 2.3vw, 2.75rem);
+  font-weight: 950;
+  letter-spacing: 0.07em;
+  line-height: 1;
+}
+
+.hero__actions {
+  display: flex;
+  margin-top: clamp(2.75rem, 6vh, 5rem);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--line-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.button span {
+  font-size: 1.25rem;
+}
+
+.button--primary {
+  border-color: var(--red);
+  background: var(--red);
+}
+
+.button--ghost {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-3px);
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  background: var(--white);
+  color: var(--black);
+}
+
+.button--ghost:hover,
+.button--ghost:focus-visible {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.logo-frame {
+  position: relative;
+  padding: clamp(0.75rem, 1.3vw, 1.25rem);
+  border: 1px solid var(--line-dark);
+  background: #000;
+  box-shadow: 1.5rem 1.5rem 0 var(--red);
+  transform: rotate(1.5deg);
+}
+
+.logo-frame::before {
+  position: absolute;
+  z-index: -1;
+  top: -1.25rem;
+  right: 2.5rem;
+  width: 38%;
+  height: 1.25rem;
+  content: "";
+  background: var(--orange);
+}
+
+.logo-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.logo-frame__corner {
+  position: absolute;
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-color: var(--white);
+  pointer-events: none;
+}
+
+.logo-frame__corner--top {
+  top: 0.35rem;
+  left: 0.35rem;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.logo-frame__corner--bottom {
+  right: 0.35rem;
+  bottom: 0.35rem;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+}
+
+.hero__brand > p {
+  display: flex;
+  margin: 2.75rem 0 0;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero__brand > p strong {
+  padding: 0.55rem 0.8rem;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
+.hero__brand > p span {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.hero__brand > p strong::before {
+  display: inline-block;
+  width: 1.35rem;
+  height: 0.18rem;
+  margin-right: 0.55rem;
+  background: var(--red);
+  content: "";
+  vertical-align: middle;
+}
+
+.ticker {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  margin-top: 4.8rem;
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  background: var(--orange);
+  color: var(--black);
+}
+
+.ticker div {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: ticker 24s linear infinite;
+}
+
+.ticker span {
+  padding: 1.05rem 1.3rem;
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+
+.ticker i {
+  width: 0.75rem;
+  aspect-ratio: 1;
+  background: var(--red);
+  transform: rotate(45deg);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.flavour {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(5rem, 9vw, 9rem) max(2rem, calc((100vw - 1480px) / 2)) clamp(5rem, 8vw, 8rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 7% 22%, rgba(224, 0, 27, 0.18), transparent 22rem),
+    linear-gradient(112deg, transparent 0 68%, rgba(255, 160, 0, 0.05) 68% 68.15%, transparent 68.15%),
+    var(--black);
+}
+
+.flavour::before {
+  position: absolute;
+  z-index: -1;
+  top: 8rem;
+  right: -11rem;
+  width: 28rem;
+  aspect-ratio: 1;
+  content: "";
+  border: 4.5rem solid rgba(224, 0, 27, 0.08);
+  border-radius: 50%;
+}
+
+.flavour__copy {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.flavour__heading {
+  position: relative;
+  height: clamp(24rem, 46vw, 42rem);
+  margin: 0;
+  overflow: hidden;
+  background: var(--black-soft);
+  box-shadow: -1.1rem 1.1rem 0 var(--red);
+  transform: rotate(-1.2deg);
+}
+
+.flavour__heading::after {
+  position: absolute;
+  inset: 48% 0 0;
+  content: "";
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+  pointer-events: none;
+}
+
+.flavour__heading img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.flavour .section-number {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.flavour h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(4rem, 7.2vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.flavour h2 em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.flavour__text {
+  max-width: 50rem;
+  padding-top: 0;
+}
+
+.flavour__text .section-number {
+  margin: 0 0 clamp(1.4rem, 2.6vw, 2.5rem);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.flavour__text h2 {
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.flavour__text > p {
+  margin: 0 0 1.4rem;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.68;
+}
+
+.flavour__text strong {
+  color: var(--white);
+  font-weight: 900;
+}
+
+.flavour__text .flavour__closing {
+  margin: clamp(2.5rem, 5vw, 4.5rem) 0 1.5rem;
+  color: var(--orange);
+  font-family: var(--display);
+  font-size: clamp(2.7rem, 4.6vw, 5.2rem);
+  letter-spacing: -0.025em;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.flavour__text .flavour__signature {
+  margin-bottom: 0;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.food-grid {
+  display: grid;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(12, clamp(5.5rem, 6.2vw, 7.2rem));
+  gap: clamp(0.55rem, 0.9vw, 0.9rem);
+}
+
+.food-card {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--black-soft);
+}
+
+.food-card::after {
+  position: absolute;
+  inset: 38% 0 0;
+  content: "";
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+  pointer-events: none;
+}
+
+.food-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.food-card:hover img {
+  transform: scale(1.035);
+}
+
+.food-card figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 1.1rem;
+  bottom: 1rem;
+  left: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.food-card--doner {
+  grid-column: 1 / 8;
+  grid-row: 1 / 3;
+}
+
+.food-card--burger {
+  grid-column: 8 / 13;
+  grid-row: 1 / 4;
+}
+
+.food-card--burger img {
+  object-position: center 61%;
+}
+
+.food-card--pizza {
+  grid-column: 1 / 5;
+  grid-row: 3 / 5;
+}
+
+.food-card--pizza img {
+  object-position: center 68%;
+}
+
+.food-card--durum {
+  grid-column: 5 / 8;
+  grid-row: 3 / 5;
+}
+
+.food-card--krunch {
+  grid-column: 1 / 5;
+  grid-row: 5 / 7;
+}
+
+.food-card--taco {
+  grid-column: 5 / 9;
+  grid-row: 5 / 7;
+}
+
+.food-card--kapsalon {
+  grid-column: 9 / 13;
+  grid-row: 4 / 7;
+}
+
+.food-card--tapa {
+  grid-column: 1 / 7;
+  grid-row: 7 / 10;
+}
+
+.food-card--alitas {
+  grid-column: 7 / 13;
+  grid-row: 7 / 10;
+}
+
+.food-card--durun-gratinado {
+  grid-column: 1 / 7;
+  grid-row: 10 / 13;
+}
+
+.food-card--kronchis {
+  grid-column: 7 / 13;
+  grid-row: 10 / 13;
+}
+
+.food-card--tapa img,
+.food-card--alitas img,
+.food-card--durun-gratinado img,
+.food-card--kronchis img {
+  object-position: center 64%;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+  gap: 4.8rem;
+  align-items: start;
+  padding: 7rem max(2rem, calc((100vw - 1480px) / 2));
+  background: var(--paper);
+  color: var(--black);
+}
+
+.section-number {
+  margin-bottom: clamp(2rem, 5vw, 5rem);
+  color: #6c6962;
+}
+
+.information .section-number {
+  margin-bottom: 2.6rem;
+  color: var(--black);
+  letter-spacing: 0.22em;
+}
+
+.information__content {
+  min-width: 0;
+}
+
+.information h2 {
+  max-width: 6.8ch;
+  margin: 0;
+  font-family: var(--display);
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.84;
+  text-transform: uppercase;
+}
+
+.information__copy {
+  max-width: 28rem;
+  margin: 1.6rem 0 0;
+  color: #322f2a;
+  font-size: 1.12rem;
+  line-height: 1.48;
+}
+
+.information__grid {
+  display: grid;
+  margin-top: 3.2rem;
+  gap: 2.5rem;
+  align-content: start;
+}
+
+.information__contacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.4vw, 1.35rem);
+}
+
+.info-card {
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-card__icon {
+  display: grid;
+  width: 3.35rem;
+  height: 3.35rem;
+  margin-bottom: 0.95rem;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--red), #c90018);
+  color: var(--white);
+  font-size: 1.45rem;
+  line-height: 1;
+  /* box-shadow: 0 0.75rem 1.6rem rgba(224, 0, 27, 0.18); */
+  transition: transform 180ms ease;
+}
+
+.info-card__icon svg {
+  display: block;
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.info-card--phone .info-card__icon {
+  background: var(--orange);
+  box-shadow: 0 0.75rem 1.6rem rgba(255, 160, 0, 0.2);
+}
+
+.info-card__label {
+  display: block;
+  margin: 0 0 0.55rem;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.info-card__text {
+  display: block;
+  color: #39352f;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.info-card:hover .info-card__icon,
+.info-card:focus-visible .info-card__icon {
+  transform: translateY(-0.14rem);
+}
+
+.information__social {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  max-width: 28rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(5, 5, 5, 0.3);
+}
+
+.information__social > span {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.information__social nav {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.information__social-link {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.information__social-link:hover,
+.information__social-link:focus-visible {
+  background: var(--orange);
+  color: var(--black);
+  transform: translateY(-0.12rem);
+}
+
+.information__map {
+  position: relative;
+  min-height: 42rem;
+  overflow: hidden;
+  border: 1px solid rgba(5, 5, 5, 0.18);
+  background: #d8d2c8;
+}
+
+.information__map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(0.86) contrast(0.96);
+}
+
+.information__map-link {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.82rem 1rem;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.information__map-link:hover,
+.information__map-link:focus-visible {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.social {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(270px, 0.95fr) minmax(320px, 0.82fr) minmax(320px, 0.82fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  padding: clamp(5rem, 8vw, 8rem) max(2rem, calc((100vw - 1480px) / 2));
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, transparent 0 75%, rgba(224, 0, 27, 0.28) 75% 75.25%, transparent 75.25%),
+    radial-gradient(circle at 82% 58%, rgba(255, 255, 255, 0.08), transparent 22rem),
+    var(--black-soft);
+}
+
+.social::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 7px 7px;
+  opacity: 0.35;
+}
+
+.social > * {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.social__corner-link {
+  position: absolute;
+  z-index: 2;
+  top: clamp(2rem, 3vw, 3.5rem);
+  right: max(2rem, calc((100vw - 1480px) / 2));
+  color: var(--orange);
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  line-height: 1;
+  text-decoration: none;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.social__corner-link:hover,
+.social__corner-link:focus-visible {
+  color: var(--white);
+  transform: translate(0.2rem, -0.2rem);
+}
+
+.social__brand,
+.social__info {
+  border-right: 1px solid rgba(224, 0, 27, 0.72);
+  padding-right: clamp(2rem, 4vw, 4.5rem);
+}
+
+.social__logo {
+  display: block;
+  width: min(15rem, 72%);
+  height: auto;
+  margin-bottom: clamp(1.75rem, 3vw, 3rem);
+}
+
+.social .section-number {
+  color: var(--red);
+}
+
+.social .section-number {
+  margin-bottom: 1.2rem;
+}
+
+.social h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(5.2rem, 8vw, 9.2rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.social h2 em {
+  display: block;
+  color: var(--white);
+  font-style: normal;
+}
+
+.social__copy {
+  max-width: 32rem;
+  margin: clamp(1.5rem, 2.5vw, 2.2rem) 0 1.25rem;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.social__copy::after {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 0.2rem;
+  margin-top: 1.6rem;
+  background: var(--red);
+}
+
+.social__links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.social__links a {
+  display: inline-flex;
+  min-height: 2.9rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.75rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  transition: border-color 200ms ease, background 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.social__links a:hover,
+.social__links a:focus-visible {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--black);
+  transform: translateY(-0.12rem);
+}
+
+.social__links strong {
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.social__arrow {
+  color: var(--orange);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.social__links a:hover .social__arrow,
+.social__links a:focus-visible .social__arrow {
+  color: var(--black);
+}
+
+.social__panel-title {
+  margin: 0 0 1.8rem;
+  color: var(--red);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.social__info-list {
+  display: grid;
+}
+
+.social__info-item {
+  display: grid;
+  grid-template-columns: 3.9rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  color: rgba(255, 255, 255, 0.84);
+  text-decoration: none;
+}
+
+.social__info-item:first-child {
+  padding-top: 0;
+}
+
+.social__info-item:hover,
+.social__info-item:focus-visible {
+  color: var(--white);
+}
+
+.social__icon {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.social__info-item strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.social__info-item span span {
+  display: block;
+  font-size: clamp(1rem, 1.4vw, 1.22rem);
+  line-height: 1.35;
+}
+
+.social__app-download {
+  margin-top: 1.5rem;
+  padding: clamp(1rem, 2.4vw, 1.25rem);
+  /* border: 4px solid rgba(91, 123, 72, 0.9); */
+  border-radius: 0.5rem;
+  /* background: linear-gradient(135deg, rgba(81, 125, 160, 0.96), rgba(63, 98, 128, 0.94)); */
+  box-shadow: 0 1.2rem 2.5rem rgba(0, 0, 0, 0.24);
+}
+
+.social__app-title {
+  margin: 0 0 0.95rem;
+  color:#fff;
+  font-size: clamp(0.82rem, 1vw, 1rem);
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.social__app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem clamp(1rem, 2vw, 1.45rem);
+}
+
+.social__app-link {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+  text-decoration: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* .social__app-link:hover,
+.social__app-link:focus-visible {
+  opacity: 0.88;
+  transform: translateY(-0.08rem);
+} */
+
+.social__app-badge,
+.social__app-qr {
+  display: block;
+  width: 100%;
+  max-width: 8.75rem;
+  height: auto;
+}
+
+.social__app-badge {
+  border-radius: 0.25rem;
+}
+.social__app-badge:hover{
+  opacity: 0.88;
+  transform: translateY(-0.08rem); 
+}
+
+.social__app-qr {
+  aspect-ratio: 1;
+  border-radius: 0.35rem;
+  background: #fff;
+  border: #000 1px solid;
+  object-fit: cover;
+  box-shadow: 0 0.7rem 1.4rem rgba(0, 0, 0, 0.18);
+}
+
+.social__hours-list {
+  display: grid;
+}
+
+.social__hours-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.social__hours-row:first-child {
+  padding-top: 0;
+}
+
+.social__hours-row dt {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  color: var(--white);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-weight: 800;
+}
+
+.social__hours-row--today {
+  margin-inline: -0.7rem;
+  padding-inline: 0.7rem;
+  border-color: rgba(255, 163, 0, 0.72);
+  background: linear-gradient(90deg, rgba(255, 163, 0, 0.18), transparent);
+}
+
+.social__hours-row--today dd {
+  color: var(--white);
+  font-weight: 900;
+}
+
+.social__today {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--orange);
+  color: var(--black);
+  padding: 0.22rem 0.45rem;
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.social__hours-row dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  line-height: 1.35;
+  text-align: right;
+}
+
+.social__hours-row dd span {
+  display: block;
+}
+
+@media (max-width: 1180px) {
+  .social {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .social__brand {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 1px solid rgba(224, 0, 27, 0.72);
+    padding-right: 0;
+    padding-bottom: 3rem;
+  }
+
+  .social__info {
+    padding-right: 2rem;
+  }
+
+  .social__copy {
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .social {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    padding: 5rem 1rem;
+  }
+
+  .social__corner-link {
+    top: 1.5rem;
+    right: 1rem;
+  }
+
+  .social__brand,
+  .social__info {
+    border-right: 0;
+    border-bottom: 1px solid rgba(224, 0, 27, 0.72);
+    padding-right: 0;
+    padding-bottom: 2.5rem;
+  }
+
+  .social__logo {
+    width: 9rem;
+  }
+
+  .social h2 {
+    font-size: clamp(4.4rem, 23vw, 7.2rem);
+  }
+
+  .social__links {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .social__links a {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .social__info-item {
+    grid-template-columns: 3.3rem minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .social__icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.2rem;
+  }
+
+  .social__app-download {
+    max-width: 28rem;
+  }
+
+  .social__hours-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .social__hours-row dd {
+    text-align: left;
+  }
+}
+
+@media (max-width: 420px) {
+  /* .social__app-grid {
+    grid-template-columns: 1fr;
+  } */
+
+  .social__app-badge,
+  .social__app-qr {
+    max-width: 9.5rem;
+  }
+}
+
+.site-footer {
+  position: relative;
+  display: block;
+  min-height: 8rem;
+  padding: 1.5rem max(2rem, calc((100vw - 1480px) / 2));
+  border-top: 1px solid var(--line-dark);
+  background: var(--black-soft);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.site-footer__meta {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-right: 5rem;
+}
+
+/* .site-footer__meta > p {
+  /* flex: 1 1 14rem; *
+} */
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer__credit {
+  text-align: right;
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.back-to-top {
+  position: fixed;
+  z-index: 40;
+  right: max(1rem, calc((100vw - 1480px) / 2));
+  bottom: 1.4rem;
+  display: grid;
+  width: 3.35rem;
+  height: 3.35rem;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.back-to-top::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: var(--orange);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.back-to-top span {
+  position: relative;
+  z-index: 1;
+  color: var(--black);
+  font-size: 1.35rem;
+  line-height: 1;
+  transform: translateY(0.2rem);
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover::before,
+.back-to-top:focus-visible::before {
+  background: var(--white);
+  transform: translateY(-0.15rem);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1280px) {
+  .information {
+    grid-template-columns: minmax(360px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2.2rem, 4vw, 3.2rem);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .information__intro {
+    max-width: 34rem;
+  }
+
+  .information .section-number {
+    margin-bottom: 1.3rem;
+  }
+
+  .information h2 {
+    font-size: clamp(5rem, 7.2vw, 6.4rem);
+  }
+
+  /* .information__contacts {
+    gap: 0.75rem;
+  } */
+
+  .info-card__icon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+
+  .info-card__icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .info-card__label {
+    font-size: 0.62rem;
+  }
+
+  .info-card__text {
+    font-size: 12.5px;
+  }
+
+  .information__map {
+    min-height: 32rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding-top: 10rem;
+  }
+
+  .hero__copy {
+    max-width: 52rem;
+  }
+
+  .hero__brand {
+    width: min(100%, 48rem);
+    justify-self: end;
+  }
+
+  .flavour__copy {
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .flavour__heading {
+    height: clamp(22rem, 42vw, 30rem);
+  }
+
+  .flavour__text {
+    max-width: 48rem;
+  }
+
+  .section-number {
+    margin-bottom: 0;
+  }
+  
+}
+
+@media (max-width: 900px) {
+  .information {
+    grid-template-columns: 1fr;
+  }
+
+  .information__content {
+    order: 2;
+  }
+
+  .information__map {
+    order: 1;
+  }
+
+  .information__intro {
+    max-width: 48rem;
+  }
+
+}
+
+@media (max-width: 720px) {
+  .hero {
+    gap: 3.75rem;
+    padding: 8.4rem 1rem 5rem;
+    background:
+      radial-gradient(circle at 100% 36%, rgba(224, 0, 27, 0.16), transparent 38%),
+      var(--black);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.55rem, 18vw, 7rem);
+    row-gap: 0.02em;
+    line-height: 0.98;
+  }
+
+  /* .hero h1 span:nth-child(2) {
+    max-width: 100%;
+    margin-left: 0;
+    font-size: 0.7em;
+  } */
+
+  .hero__date {
+    margin-top: 1.8rem;
+  }
+
+  .hero__date strong {
+    font-size: clamp(1.25rem, 6vw, 1.7rem);
+  }
+
+  /* .hero__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  } */
+
+  .logo-frame {
+    box-shadow: 0.8rem 0.8rem 0 var(--red);
+  }
+
+  .hero__brand > p {
+    margin-top: 1.75rem;
+  }
+
+  .flavour,
+  .information {
+    gap: 3rem;
+    padding: 5rem 1rem;
+  }
+
+  .flavour h2 {
+    font-size: clamp(3.6rem, 17vw, 6.2rem);
+  }
+
+  .flavour__copy {
+    grid-template-columns: 1fr;
+  }
+
+  .flavour__heading {
+    height: 24rem;
+    box-shadow: -0.65rem 0.65rem 0 var(--red);
+    transform: none;
+  }
+
+  .flavour__text {
+    padding-top: 1rem;
+  }
+
+  .food-grid {
+    margin-top: 4rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    grid-auto-rows: 13rem;
+    gap: 0.6rem;
+  }
+
+  .food-card {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .food-card--doner {
+    grid-column: 1 / -1;
+  }
+
+  .food-card--burger {
+    grid-row: span 2;
+  }
+
+  .food-card--kapsalon {
+    grid-column: 1 / -1;
+  }
+
+  .food-card--tapa,
+  .food-card--alitas,
+  .food-card--durun-gratinado,
+  .food-card--kronchis {
+    grid-column: 1 / -1;
+  }
+
+  .food-card figcaption {
+    right: 0.75rem;
+    bottom: 0.7rem;
+    left: 0.75rem;
+    font-size: 0.62rem;
+  }
+
+  .information__intro {
+    max-width: 100%;
+  }
+
+  .section-number {
+    margin-bottom: 2.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .information h2 {
+    font-size: 4rem;
+  }
+
+  .information h2 {
+    line-height: 0.86;
+  }
+
+  .information__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .information__contacts {
+    grid-template-columns: 1fr;
+    /* gap: 1.65rem; */
+  }
+
+  .info-card {
+    display: grid;
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  .info-card__icon {
+    grid-row: span 2;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-bottom: 0;
+    font-size: 1.35rem;
+  }
+
+  .info-card__label {
+    margin-bottom: 0.25rem;
+  }
+
+  .information__map {
+    min-height: 24rem;
+  }
+
+  .information__map-link {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .site-footer {
+    min-height: 7rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .site-footer__meta {
+    min-height: 0;
+    align-items: flex-start;
+    padding-right: 4rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .flavour h2 {
+    font-size: 3rem;
+  }
+
+  .flavour__heading {
+    height: 18rem;
+  }
+
+  .information h2 {
+    font-size: 3.45rem;
+  }
+
+  .site-footer__meta {
+    display: grid;
+    gap: 0.75rem;
+    padding-right: 3.75rem;
+  }
+
+  .site-footer__credit {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@supports (padding: max(0px)) {
+ 
+  .ticker {
+    margin-top: calc(4.8rem + env(safe-area-inset-top));
+  }
+
+  .hero {
+    padding-right: max(2rem, env(safe-area-inset-right), calc((100vw - 1480px) / 2));
+    padding-left: max(2rem, env(safe-area-inset-left), calc((100vw - 1480px) / 2));
+  }
+
+  @media (max-width: 720px) {
+  .hero,
+    .flavour,
+    .information,
+    .social,
+    .site-footer {
+      padding-right: max(1rem, env(safe-area-inset-right));
+      padding-left: max(1rem, env(safe-area-inset-left));
+    }
+  }
+}
+
+
+
+/* Header */
+.site-header {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  min-height: 4.8rem;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 2.5rem);
+  padding: 0 max(1rem, calc((100vw - 1480px) / 2));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(5, 5, 5, 0.97);
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.22);
+}
+
+.wordmark {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  text-decoration: none;
+}
+
+.wordmark__text img {
+  display: block;
+  width: 5.8rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.site-header .site-nav {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(1rem, 2.2vw, 2.5rem);
+}
+
+.site-header .mobile-nav {
+  display: none;
+}
+
+.site-header .site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.2vw, 2.6rem);
+}
+
+.site-header .site-nav a,
+.site-header .book-table,
+.site-header .language-switcher button,
+.site-header .language-switcher-mobile button {
+  font-size: clamp(0.78rem, 1.05vw, 0.95rem);
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.site-header .site-nav__links a {
+  color: var(--white);
+}
+
+.site-header .site-nav__links a:hover,
+.site-header .site-nav__links a:focus-visible {
+  color: var(--orange);
+}
+
+.site-header .language-switcher,
+.site-header .language-switcher-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: #dedbd6;
+}
+
+.site-header .language-switcher button,
+.site-header .language-switcher-mobile button {
+  min-width: 2.35rem;
+  min-height: 2.15rem;
+  padding: 0 0.55rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.site-header .language-switcher button[aria-pressed="true"],
+.site-header .language-switcher-mobile button[aria-pressed="true"] {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.site-header > .language-switcher-mobile {
+  display: none;
+}
+
+.site-header .book-table {
+  display: inline-flex;
+  min-height: 2.65rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 0.95rem;
+  border-radius: 0.55rem;
+  background: var(--orange);
+  color: var(--black) !important;
+}
+
+.site-header .book-table:hover,
+.site-header .book-table:focus-visible {
+  background: var(--white);
+}
+
+.site-header .menu-toggle {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem;
+  border: 1px solid var(--line-dark);
+  background: transparent;
+  cursor: pointer;
+}
+
+.site-header .menu-toggle span {
+  display: block;
+  width: 1.45rem;
+  height: 2px;
+  margin: 0.22rem 0;
+  background: var(--white);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.site-header .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(0.44rem) rotate(45deg);
+}
+
+.site-header .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-0.44rem) rotate(-45deg);
+}
+
+@media (max-width: 1180px) {
+  .site-header .site-nav,
+  .site-header .site-nav__links {
+    gap: 1rem;
+  }
+
+  .site-header .site-nav a,
+  .site-header .language-switcher button,
+  .site-header .book-table {
+    font-size: 0.76rem;
+  }
+
+  .site-header .book-table {
+    padding-inline: 0.75rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    min-height: 4.6rem;
+    padding-inline: 1rem;
+  }
+
+  .wordmark__text img {
+    width: 5rem;
+    height: 3.5rem;
+  }
+
+  .site-header .site-nav {
+    display: none;
+  }
+
+  .site-header .mobile-nav {
+    position: fixed;
+    z-index: 59;
+    top: 4.6rem;
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0;
+    padding: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.75rem);
+    background: rgba(5, 5, 5, 0.98);
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.34);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .site-header .mobile-nav.mobile-nav--open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-header .mobile-nav__links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .site-header .mobile-nav__links a {
+    color: var(--white);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line-dark);
+    font-size: 0.92rem;
+    font-weight: 950;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .site-header .mobile-nav__links a:hover,
+  .site-header .mobile-nav__links a:focus-visible {
+    color: var(--orange);
+  }
+
+  .site-header > .language-switcher-mobile {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-header > .language-switcher-mobile button {
+    min-width: 2.25rem;
+    min-height: 2rem;
+    font-size: 0.72rem;
+  }
+
+  .site-header .menu-toggle {
+    display: flex ;
+    position: relative;
+    z-index: 61;
+    margin-left: 0.45rem;
+  }
+
+  .site-header .book-table {
+    width: fit-content;
+    justify-self: start;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 400px) {
+  .site-header {
+    padding-inline: 0.7rem;
+  }
+
+  .wordmark__text img {
+    width: 4.35rem;
+    height: 3.1rem;
+  }
+
+  .site-header > .language-switcher-mobile button {
+    min-width: 2rem;
+    min-height: 1.85rem;
+    padding-inline: 0.42rem;
+    font-size: 0.68rem;
+  }
+
+  .site-header .menu-toggle {
+    width: 2.55rem;
+    height: 2.55rem;
+    margin-left: 0.35rem;
+  }
+}
+
+
+/* ================================
+   MOBILE HORIZONTAL OVERFLOW FIX
+   ================================ */
+
+
+
+
+
+img,
+svg,
+iframe,
+video {
+  max-width: 100%;
+}
+
+svg,
+video {
+  max-width: 60%;
+}
+
+@media (max-width: 720px) {
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+  /* Prevent grid/flex children from forcing page width */
+  .hero,
+  .flavour,
+  .information,
+  .social,
+  .site-footer,
+  .site-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero__copy,
+  .hero__brand {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero h1,
+  .hero h1 span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .hero h1 span:nth-child(2) {
+    white-space: normal;
+  }
+  .hero h1 span:nth-child(2) {
+    white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+    .hero h1 span:nth-child(2) {
+        white-space: normal;
+    }
+}
+
+  /* Buttons */
+  .hero__actions,
+  .button {
+    /* width: 100%; */
+    max-width: 100%;
+  }
+
+  /* Logo */
+  .logo-frame {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .logo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Food grid */
+  .food-grid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .food-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Information */
+  .information {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .information__content,
+  .information__intro,
+  .information__grid,
+  .information__contacts {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .information h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .info-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .info-card__text {
+    overflow-wrap: anywhere;
+  }
+
+  /* Map */
+  .information__map {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .information__map iframe {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Social section */
+  .social {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .social > *,
+  .social__brand,
+  .social__info {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .social h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .social__copy {
+    max-width: 100%;
+  }
+
+  .social__links,
+  .social__links a {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .social__info-item {
+    min-width: 0;
+  }
+
+  .social__info-item span,
+  .social__info-item span span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .social__hours-row {
+    min-width: 0;
+  }
+
+  .social__hours-row dt,
+  .social__hours-row dd {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Footer */
+  .site-footer,
+  .site-footer__meta {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .site-footer__meta {
+    padding-right: 0;
+  }
+
+  .site-footer p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Decorative elements must never create viewport width */
+  .hero::after,
+  .hero__ornament,
+  .flavour::before {
+    pointer-events: none;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 400px) {
+
+  .site-header {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 0.7rem;
+  }
+
+  .hero,
+  .flavour,
+  .information,
+  .social,
+  .site-footer {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4rem);
+  }
+
+  .information h2 {
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+
+  .social h2 {
+    font-size: clamp(3.5rem, 20vw, 5rem);
+  }
+}
+
+/* MOBILE HAMBURGER FIX */
+@media (max-width: 1180px) {
+  .site-header .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 9999;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    margin-left: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: #050505;
+    color: #fff;
+  }
+
+  .site-header .menu-toggle span {
+    display: block !important;
+    width: 1.45rem;
+    height: 2px;
+    margin: 0.22rem 0;
+    background: #fff !important;
+    opacity: 1;
+  }
+}
+
+</style>
+    <title>Mister Doner Espartinas | Gran inauguración 15 de octubre</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Mister Doner",
+        "telephone": "+34 955 64 04 90",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plaza la Cruz, 19",
+          "postalCode": "41807",
+          "addressLocality": "Espartinas",
+          "addressRegion": "Sevilla",
+          "addressCountry": "ES"
+        },
+        "sameAs": [
+          "https://www.facebook.com/MisterDoner/",
+          "https://www.instagram.com/misterdoneroficial/",
+          "https://www.tiktok.com/@misterdoneroficial"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- <a class="skip-link" href="#informacion">Ir a la información</a> -->
+
+    <header class="site-header" aria-label="Cabecera" data-i18n-aria-label="headerLabel">
+      <a class="wordmark" href="#inicio" aria-label="Mister Doner, inicio" data-i18n-aria-label="homeLabel">
+        <span class="wordmark__text">
+          <img src="./pic/logo.png" alt="Mister Doner" width="120" height="120" />
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-menu" aria-label="Navegación principal" data-i18n-aria-label="navLabel">
+        <div class="site-nav__links">
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?pickup=active" data-i18n="navPickup">Recoger</a>
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?delivery=active" data-i18n="navDelivery">A domicilio</a>
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?dine-in=active" data-i18n="navDineIn">Consumo en el local</a>
+          <a href="#flavour-title" data-i18n="navAbout">Sobre nosotros</a>
+          <a href="#informacion" data-i18n="navContact">Contacto</a>
+        </div>
+        <div class="language-switcher" aria-label="Seleccionar idioma" data-i18n-aria-label="languageSwitcherLabel">
+          <button type="button" aria-pressed="false" data-language="en">EN</button>
+          <button type="button" aria-pressed="true" data-language="es">ES</button>
+        </div>
+        <a class="book-table" href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas/cart" data-i18n="bookTable">Reservar mesa</a>
+      </nav>
+
+      <div class="language-switcher-mobile" aria-label="Seleccionar idioma" data-i18n-aria-label="languageSwitcherLabel">
+        <button type="button" aria-pressed="false" data-language="en">EN</button>
+        <button type="button" aria-pressed="true" data-language="es">ES</button>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú" data-i18n-aria-label="menuOpen">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="mobile-nav" id="mobile-menu" aria-label="Navegación principal" data-i18n-aria-label="navLabel">
+        <div class="mobile-nav__links">
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?pickup=active" data-i18n="navPickup">Recoger</a>
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?delivery=active" data-i18n="navDelivery">A domicilio</a>
+          <a href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?dine-in=active" data-i18n="navDineIn">Consumo en el local</a>
+          <a href="#flavour-title" data-i18n="navAbout">Sobre nosotros</a>
+          <a href="#informacion" data-i18n="navContact">Contacto</a>
+        </div>
+        <a class="book-table mobile-nav__book" href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas/cart" data-i18n="bookTable">Reservar mesa</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="ticker" aria-hidden="true">
+        <div>
+          <span data-i18n="tickerDate">15 OCTUBRE</span><i></i><span data-i18n="tickerLocation">ESPARTINAS</span><i></i><span data-i18n="tickerEvent">GRAN INAUGURACIÓN</span><i></i>
+          <span data-i18n="tickerDate">15 OCTUBRE</span><i></i><span data-i18n="tickerLocation">ESPARTINAS</span><i></i><span data-i18n="tickerEvent">GRAN INAUGURACIÓN</span><i></i>
+        </div>
+      </div>
+
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__ornament hero__ornament--one" aria-hidden="true"></div>
+        <div class="hero__ornament hero__ornament--two" aria-hidden="true"></div>
+
+        <div class="hero__copy">
+          <p class="eyebrow" data-i18n-html="heroLocation"><span aria-hidden="true"></span> Espartinas · Sevilla</p>
+          <h1 id="hero-title">
+            <span data-i18n="heroTitleOne">Gran</span>
+            <span data-i18n="heroTitleTwo">inauguración</span>
+          </h1>
+          <p class="hero__date"><span data-i18n="heroDateLabel">El gran día</span><strong data-i18n="heroDate">15 de octubre</strong></p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas?pickup=active" target="_blank" rel="noopener noreferrer">
+              <b data-i18n="directions">Pedido ahora</b>
+            </a>
+            <a class="button button--ghost" href="https://order.foodsted.com/en/porder/835/doner-kebab-espartinas/cart" data-i18n="bookTable">
+              Reservar mesa 
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__brand" aria-label="Logotipo oficial de Mister Doner" data-i18n-aria-label="heroLogoLabel">
+          <div class="logo-frame">
+            <div class="logo-frame__corner logo-frame__corner--top" aria-hidden="true"></div>
+             <img src="./pic/hero.jpg" alt="mister-logo" width="120" height="120" />
+            <div class="logo-frame__corner logo-frame__corner--bottom" aria-hidden="true"></div>
+          </div>
+          <p><strong>Fast Food</strong><span data-i18n="brandTagline">Aquí manda el sabor.</span></p>
+        </div>
+      </section>
+
+      <section class="flavour" aria-labelledby="flavour-title">
+        <div class="flavour__copy">
+          <figure class="flavour__heading">
+            <img src="./pic/about.jpg" alt="Mister Doner kebab">
+          </figure>
+
+          <div class="flavour__text">
+            <p class="section-number" data-i18n="flavourSectionLabel">Aquí manda el sabor</p>
+            <h2 id="flavour-title" data-i18n-html="flavourTitle">El sabor es<br><em>el protagonista.</em></h2>
+            <p data-i18n-html="flavourIntroOne">En <strong>MISTER DONER Espartinas</strong> el sabor es el protagonista. Disfruta de döner kebab, dürums recién preparados, burgers irresistibles, pizzas, tacos, platos combinados y mucho más, elaborados al momento para que todo llegue caliente, recién hecho y con todo su sabor.</p>
+            <p data-i18n-html="flavourIntroTwo">Carne sabrosa, ingredientes frescos, salsas que marcan la diferencia y combinaciones pensadas para cuando quieres comer bien de verdad. Ya sea para un almuerzo rápido, una cena con amigos, recoger tu pedido o disfrutarlo en nuestro restaurante, en <strong>MISTER DONER</strong> siempre hay una buena excusa para volver.</p>
+            <p class="flavour__closing" data-i18n-html="flavourClosing">Ven con hambre.<br>Nosotros nos encargamos del resto.</p>
+            <p class="flavour__signature" data-i18n="flavourSignature">MISTER DONER — Aquí manda el sabor.</p>
+          </div>
+        </div>
+
+        <div class="food-grid" aria-label="Selección de platos de Mister Doner" data-i18n-aria-label="foodGridLabel">
+          <figure class="food-card food-card--doner">
+            <img src="./pic/mister-kebab.jfif" alt="Mister Kebab">
+            <figcaption>Mister Kebab</figcaption>
+          </figure>
+          <figure class="food-card food-card--burger">
+            <img src="./pic/mister-burger.jfif" alt="Mister Burger">
+            <figcaption>Mister Burger</figcaption>
+          </figure>
+          <figure class="food-card food-card--pizza">
+            <img src="./pic/mister-pizza.jfif" alt="Mister Pizza">
+            <figcaption>Mister Pizza</figcaption>
+          </figure>
+          <figure class="food-card food-card--durum">
+            <img src="./pic/Mister-Duram.jfif" alt="Mister Durum">
+            <figcaption>Mister Durum</figcaption>
+          </figure>
+          <figure class="food-card food-card--krunch">
+            <img src="./pic/mister-krunch.jfif" alt="Mister Krunch">
+            <figcaption>Mister Krunch</figcaption>
+          </figure>
+          <figure class="food-card food-card--taco">
+            <img src="./pic/Taco-Mister.jfif" alt="Mister Taco">
+            <figcaption>Mister Taco</figcaption>
+          </figure>
+          <figure class="food-card food-card--kapsalon">
+            <img src="./pic/Mister-Kapsalon.jfif" alt="Mister Kapsalon">
+            <figcaption>Mister Kapsalon</figcaption>
+          </figure>
+          <figure class="food-card food-card--tapa">
+            <img src="./pic/Tapa-Mister.jfif" alt="Tapa Mister Doner">
+            <figcaption>Tapa Mister Doner</figcaption>
+          </figure>
+          <figure class="food-card food-card--alitas">
+            <img src="./pic/Mister-Alitas.jfif" alt="Mister Alitas">
+            <figcaption>Mister Alitas</figcaption>
+          </figure>
+          <figure class="food-card food-card--durun-gratinado">
+            <img src="./pic/Mister Durun Gratinado.jfif" alt="Mister Durun Gratinado">
+            <figcaption>Mister Durun Gratinado</figcaption>
+          </figure>
+          <figure class="food-card food-card--kronchis">
+            <img src="./pic/Tiras Kronchis .jfif" alt="Tiras Kronchis">
+            <figcaption>Tiras Kronchis</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="information" id="informacion" aria-labelledby="info-title">
+        <div class="information__content">
+          <div class="information__intro">
+            <p class="section-number" data-i18n="infoSectionLabel">Información</p>
+            <h2 id="info-title" data-i18n-html="infoTitle">Nos vemos<br>en Espartinas.</h2>
+            <p class="information__copy" data-i18n="infoCopy">Somos fáciles de encontrar y siempre estamos encantados de saber de ti. Llámanos o ven a visitarnos cuando quieras.</p>
+          </div>
+
+          <div class="information__grid">
+            <div class="information__contacts">
+              <a class="info-card info-card--email" href="mailto:info@plazalacruz19.com" aria-label="Enviar email a info@plazalacruz19.com" data-i18n-aria-label="emailAriaLabel">
+                <span class="info-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="info-card__label" data-i18n="emailLabel">Email</span>
+                <span class="info-card__text">info@plazalacruz19.com</span>
+              </a>
+
+              <a class="info-card info-card--phone" href="tel:+34955640490" aria-label="Llamar al 955 64 04 90" data-i18n-aria-label="phoneAriaLabel">
+                <span class="info-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7.5 3.5 10 3l2 5-2.2 1.7a15.2 15.2 0 0 0 4.5 4.5L16 12l5 2-.5 2.5a3 3 0 0 1-3.2 2.4C10.8 18.1 5.9 13.2 5.1 6.7A3 3 0 0 1 7.5 3.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="info-card__label" data-i18n="phoneLabel">Teléfono</span>
+                <span class="info-card__text">955 64 04 90</span>
+              </a>
+
+              <a class="info-card info-card--address" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd1213924f899a6d:0x64fa100000a84d54?sa=X&amp;ved=1t:8290&amp;hl=es&amp;ictx=111" target="_blank" rel="noopener noreferrer" aria-label="Abrir Mister Doner en Google Maps, se abre en una pestaña nueva" data-i18n-aria-label="socialMapsAriaLabel">
+                <span class="info-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <circle cx="12" cy="10" r="2.5" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="info-card__label" data-i18n="addressLabel">Dirección</span>
+                <span class="info-card__text">Plaza la Cruz, 19<br>41807 Espartinas, Sevilla</span>
+              </a>
+            </div>
+
+            <!-- <div class="information__social">
+              <span data-i18n="followUsLabel">Síguenos</span>
+              <nav aria-label="Redes sociales de Mister Doner" data-i18n-aria-label="socialNavLabel">
+                <a class="information__social-link" href="https://www.instagram.com/misterdoneroficial/" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en Instagram, se abre en una pestaña nueva" data-i18n-aria-label="instagramAriaLabel">IG</a>
+                <a class="information__social-link" href="https://www.facebook.com/MisterDoner/" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en Facebook, se abre en una pestaña nueva" data-i18n-aria-label="facebookAriaLabel">FB</a>
+                <a class="information__social-link" href="https://www.tiktok.com/@misterdoneroficial" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en TikTok, se abre en una pestaña nueva" data-i18n-aria-label="tiktokAriaLabel">TT</a>
+              </nav>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="information__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.322009854642!2d-6.128479100000001!3d37.3822164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1213924f899a6d%3A0x64fa100000a84d54!2sMister%20Doner!5e0!3m2!1ses!2s!4v1788428723906!5m2!1ses!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <!-- <a class="information__map-link" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd1213924f899a6d:0x64fa100000a84d54?sa=X&amp;ved=1t:8290&amp;hl=es&amp;ictx=111" target="_blank" rel="noopener noreferrer" data-i18n-html="openMaps">
+            Abrir en Google Maps <span aria-hidden="true">↗</span>
+          </a> -->
+        </div>
+      </section>
+
+      <section class="social" aria-labelledby="social-title">
+        <!-- <a class="social__corner-link" href="https://www.instagram.com/misterdoneroficial/" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en Instagram, se abre en una pestaña nueva" data-i18n-aria-label="instagramAriaLabel">
+          <span aria-hidden="true">↗</span>
+        </a> -->
+
+        <div class="social__brand">
+          <img class="social__logo" src="./pic/logo.png" alt="Mister Doner" width="180" height="180" loading="lazy">
+          <p class="section-number" data-i18n="socialSectionLabel">Redes sociales</p>
+          <h2 id="social-title" data-i18n-html="socialTitle">Sígue<br><em>nos.</em></h2>
+          <p class="social__copy" data-i18n="socialCopy">Síguenos en nuestras redes sociales para ofertas exclusivas, novedades y más.</p>
+
+          <nav class="social__links" aria-label="Redes sociales de Mister Doner" data-i18n-aria-label="socialNavLabel">
+            <a href="https://www.facebook.com/MisterDoner/" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en Facebook, se abre en una pestaña nueva" data-i18n-aria-label="facebookAriaLabel">
+              <strong>Facebook</strong>
+              <span class="social__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.instagram.com/misterdoneroficial/" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en Instagram, se abre en una pestaña nueva" data-i18n-aria-label="instagramAriaLabel">
+              <strong>Instagram</strong>
+              <span class="social__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://www.tiktok.com/@misterdoneroficial" target="_blank" rel="noopener noreferrer" aria-label="Mister Doner en TikTok, se abre en una pestaña nueva" data-i18n-aria-label="tiktokAriaLabel">
+              <strong>TikTok</strong>
+              <span class="social__arrow" aria-hidden="true">↗</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="social__info" aria-labelledby="social-info-title">
+          <h3 class="social__panel-title" id="social-info-title" data-i18n="socialInfoTitle">Información</h3>
+          <div class="social__info-list">
+            <a class="social__info-item" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd1213924f899a6d:0x64fa100000a84d54?sa=X&amp;ved=1t:8290&amp;hl=es&amp;ictx=111" target="_blank" rel="noopener noreferrer" aria-label="Abrir Mister Doner en Google Maps, se abre en una pestaña nueva" data-i18n-aria-label="socialMapsAriaLabel">
+              <span class="social__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <circle cx="12" cy="10" r="2.5" fill="currentColor"/>
+                </svg>
+              </span>
+              <span>
+                <strong data-i18n="addressLabel">Dirección</strong>
+                <span>Plaza la Cruz, 19<br>41807 Espartinas, Sevilla</span>
+              </span>
+            </a>
+
+            <a class="social__info-item" href="tel:+34955640490" aria-label="Llamar al 955 64 04 90" data-i18n-aria-label="phoneAriaLabel">
+              <span class="social__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M7.5 3.5 10 3l2 5-2.2 1.7a15.2 15.2 0 0 0 4.5 4.5L16 12l5 2-.5 2.5a3 3 0 0 1-3.2 2.4C10.8 18.1 5.9 13.2 5.1 6.7A3 3 0 0 1 7.5 3.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>
+                <strong data-i18n="phoneLabel">Teléfono</strong>
+                <span>955 64 04 90</span>
+              </span>
+            </a>
+
+            <a class="social__info-item" href="mailto:info@plazalacruz19.com" aria-label="Enviar email a info@plazalacruz19.com" data-i18n-aria-label="emailAriaLabel">
+              <span class="social__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>
+                <strong data-i18n="emailLabel">Email</strong>
+                <span>info@plazalacruz19.com</span>
+              </span>
+            </a>
+
+            <div class="social__app-download" aria-labelledby="social-app-download-title">
+              <h4 class="social__app-title" id="social-app-download-title" data-i18n="appDownloadTitle">Descarga Foodsted App</h4>
+              <div class="social__app-grid">
+                <a class="social__app-link" href="https://play.google.com/store/apps/details?id=com.foodsted.apps" target="_blank" rel="noopener noreferrer" aria-label="Descarga la app de Foodsted en Google Play" data-i18n-aria-label="appDownloadGoogleAriaLabel">
+                  <img class="social__app-badge" src="./pic/playStore.png" alt="" width="150" height="50" loading="lazy" aria-hidden="true">
+                  <img class="social__app-qr" src="./pic/playstoreQr.png" alt="" width="250" height="250" loading="lazy" aria-hidden="true">
+                </a>
+                <a class="social__app-link" href="https://apps.apple.com/us/app/foodsted/id1530698059" target="_blank" rel="noopener noreferrer" aria-label="Descarga la app de Foodsted en App Store" data-i18n-aria-label="appDownloadAppleAriaLabel">
+                  <img class="social__app-badge" src="./pic/appStore.png" alt="" width="150" height="50" loading="lazy" aria-hidden="true">
+                  <img class="social__app-qr" src="./pic/appstoreQr.png" alt="" width="250" height="250" loading="lazy" aria-hidden="true">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social__hours" aria-labelledby="social-hours-title">
+          <h3 class="social__panel-title" id="social-hours-title" data-i18n="openingHoursTitle">Horario de apertura</h3>
+          <dl class="social__hours-list">
+            <div class="social__hours-row" data-day="1">
+              <dt><span data-i18n="dayMonday">Lunes</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="2">
+              <dt><span data-i18n="dayTuesday">Martes</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="3">
+              <dt><span data-i18n="dayWednesday">Miércoles</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="4">
+              <dt><span data-i18n="dayThursday">Jueves</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="5">
+              <dt><span data-i18n="dayFriday">Viernes</span></dt>
+              <dd><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="6">
+              <dt><span data-i18n="daySaturday">Sábado</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+            <div class="social__hours-row" data-day="0">
+              <dt><span data-i18n="daySunday">Domingo</span></dt>
+              <dd><span>13:00–16:00</span><span>19:00–23:45</span></dd>
+            </div>
+                      
+            
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__meta">
+        <p data-i18n="copyright">2026 Mister Doner. Todos los derechos reservados.</p>
+        <p class="site-footer__credit">
+          <img src="https://foodsted.no/img/Logo.png" alt="logo" height="20" width="20" style="vertical-align: middle; margin-right: 5px;"/>
+          <span data-i18n="poweredBy">Desarrollado por</span> <a href="http://foodsted.no" target="_blank" rel="noopener noreferrer">FOODSTED</a></p>
+      </div>
+      <a class="back-to-top" href="#inicio" aria-label="Volver al inicio" aria-hidden="true" tabindex="-1" ><span aria-hidden="true">↑</span></a>
+    </footer>
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const heroSection = document.querySelector('.hero');
+      const backToTop = document.querySelector('.back-to-top');
+
+      const setMenuOpen = (isOpen) => {
+        if (!menuToggle || !mobileNav) {
+          return;
+        }
+
+        mobileNav.classList.toggle('mobile-nav--open', isOpen);
+        document.body.classList.toggle('nav-open', isOpen);
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      };
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', () => {
+          setMenuOpen(!mobileNav.classList.contains('mobile-nav--open'));
+        });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            setMenuOpen(false);
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 900) {
+            setMenuOpen(false);
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            setMenuOpen(false);
+          }
+        });
+      }
+
+      document.querySelectorAll('.social__hours-row[data-day]').forEach((row) => {
+        const isToday = row.dataset.day === String(new Date().getDay());
+        const badge = row.querySelector('.social__today');
+
+        row.classList.toggle('social__hours-row--today', isToday);
+        if (isToday) {
+          row.setAttribute('aria-current', 'date');
+        } else {
+          row.removeAttribute('aria-current');
+        }
+
+        if (badge) {
+          badge.hidden = !isToday;
+        }
+      });
+
+      const toggleBackToTop = () => {
+        if (!heroSection || !backToTop) {
+          return;
+        }
+
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const shouldShow = window.scrollY > heroBottom - 80;
+
+        backToTop.classList.toggle('back-to-top--visible', shouldShow);
+        backToTop.setAttribute('aria-hidden', String(!shouldShow));
+        backToTop.tabIndex = shouldShow ? 0 : -1;
+      };
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    </script>
+    <script src="./language.js"></script>
+  </body>
+</html>
